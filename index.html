@@ -7,13 +7,16 @@
     <script src="app/app.js"></script>
   </head>
   <body>
-    <div ng-controller="appController">
-      <input type="text" ng-model="search" />
-      <ul>
-        <li ng-repeat="user in users | orderBy: 'name' | filter: search">
-          {{user.name}} - {{user.rate | currency}}
-        </li>
-      </ul>
+    <header ng-include="'header.html'"></header>
+    <div class="content">
+      <div ng-controller="appController">
+        <input type="text" ng-model="search" placeholder="Search for a user"/>
+        <ul>
+          <li ng-repeat="user in users | orderBy: 'name' | filter: search">
+            {{user.name}} - {{user.rate | currency}}
+          </li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>
