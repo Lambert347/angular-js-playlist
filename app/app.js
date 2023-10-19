@@ -1,15 +1,10 @@
 //declares this module as a variable to be used by the html view
-let app = angular.module('app', ['ngRoute']);
-
-//everything below is contained in this module and allows for the program to be broken up into logical chunks
-
-//runs before the application runs --> can add additional options (ie: routing)
-//any code that acts as preparation before the application is run
-app().config(['$routeProvider', function($routeProvider){
+let app = angular.module('app', ['ngRoute']).config(['$routeProvider', function($routeProvider){
     $routeProvider
         .when('/home', {
             templateUrl: 'view/home.html'
         })
+        //because the appController is specified here, it does not need to be added to the div tag in the directory.html view, div ng-controller is no longer needed
         .when('/directory', {
             templateUrl: 'view/directory.html',
             controller: 'appController'
@@ -17,7 +12,14 @@ app().config(['$routeProvider', function($routeProvider){
         .otherwise({
             redirectTo: '/home'
         })
-}])
+    }]);
+
+//everything below is contained in this module and allows for the program to be broken up into logical chunks
+
+//runs before the application runs --> can add additional options (ie: routing)
+//any code that acts as preparation before the application is run
+//app().
+
 
 //runs as the application runs
 // app.run(function(){

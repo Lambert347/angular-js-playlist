@@ -5,9 +5,9 @@
       <input type="text" ng-model="search" placeholder="Search for a user"/>
       <ul>
         <li ng-repeat="user in users | orderBy: order | filter: search" ng-show="user.available">
-          <img ng-src="{{user.thumb}}" style="margin: -12px 10px 0 0; float: left; width: 50px;"
+          <!-- <img ng-src="{{user.thumb}}" style="margin: -12px 10px 0 0; float: left; width: 50px;"
             ng-show="user.thumb" />
-          />
+          /> -->
           <h3>{{user.name}} - {{user.rate | currency}}</h3>
           <div class="remove" ng-click="removeUser(user)">x</div>
           <span>{{user.shirtColor}} shirt</span>
