@@ -4,29 +4,12 @@
     <title>TheNetNinja Angular Playlist</title>
     <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
     <script src="app/lib/angular.min.js"></script>
+    <script src="app/lib/angular-route.min.js"></script>
     <script src="app/app.js"></script>
   </head>
   <body>
     <header ng-include="'header.html'"></header>
-    <div class="content">
-      <div ng-controller="appController">
-        <button ng-click="order = 'name'">Order by Name</button>
-        <button ng-click="order = 'shirtColor'">Order by Shirt Color</button>
-        <input type="text" ng-model="search" placeholder="Search for a user"/>
-        <ul>
-          <li ng-repeat="user in users | orderBy: order | filter: search" ng-show="user.available">
-            <h3>{{user.name}} - {{user.rate | currency}}</h3>
-            <div class="remove" ng-click="removeUser(user)">x</div>
-            <span>{{user.shirtColor}} shirt</span>
-          </li>
-        </ul>
-        <form ng-submit="addUser()">
-          <input type="text" placeholder="name" ng-model="newUser.name" />
-          <input type="text" placeholder="shirt color" ng-model="newUser.shirtColor" />
-          <input type="text" placeholder="rate" ng-model="newUser.rate" />
-          <input type="submit" value="Add new user" />
-        </form>
-      </div>
-    </div>
+    <main ng-view></main>
+
   </body>
 </html>

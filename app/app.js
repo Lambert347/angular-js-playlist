@@ -1,14 +1,23 @@
 //declares this module as a variable to be used by the html view
-let app = angular.module('app', []);
+let app = angular.module('app', ['ngRoute']);
 
 //everything below is contained in this module and allows for the program to be broken up into logical chunks
 
 //runs before the application runs --> can add additional options (ie: routing)
 //any code that acts as preparation before the application is run
-// app().config(function(){
-
-
-// });
+app().config(['$routeProvider', function($routeProvider){
+    $routeProvider
+        .when('/home', {
+            templateUrl: 'view/home.html'
+        })
+        .when('/directory', {
+            templateUrl: 'view/directory.html',
+            controller: 'appController'
+        })
+        .otherwise({
+            redirectTo: '/home'
+        })
+}])
 
 //runs as the application runs
 // app.run(function(){
@@ -30,25 +39,29 @@ app.controller('appController', ['$scope' , function($scope){
         name: 'Algernon',
         shirtColor: 'yellow',
         rate: 50,
-        available: true
+        available: true,
+        thumb: "content/img/yoshi.png"
     },
     {
         name: 'Jorge',
         shirtColor: 'green',
         rate: 500,
-        available: false
+        available: false,
+        thumb: "content/img/crystal.png"
     },
     {
         name: 'Patricia',
         shirtColor: 'red',
         rate: 500000,
-        available: true
+        available: true,
+        thumb: "content/img/ryu.png"
     },
     {
         name: 'Francesca',
         shirtColor: 'white',
         rate: 1,
-        available: false
+        available: false,
+        thumb: "content/img/shaun.png"
     }
     ];
 
