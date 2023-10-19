@@ -1,5 +1,5 @@
 //declares this module as a variable to be used by the html view
-var app = angular.module('app', []);
+let app = angular.module('app', []);
 
 //everything below is contained in this module and allows for the program to be broken up into logical chunks
 
@@ -28,24 +28,35 @@ app.controller('appController', ['$scope' , function($scope){
     $scope.users = [
     {
         name: 'Algernon',
-        shirtColor: 'blue',
-        rate: 50
+        shirtColor: 'yellow',
+        rate: 50,
+        available: true
     },
     {
         name: 'Jorge',
         shirtColor: 'green',
-        rate: 500
+        rate: 500,
+        available: false
     },
     {
         name: 'Patricia',
-        shirtColor: 'burgundy',
-        rate: 500000
+        shirtColor: 'red',
+        rate: 500000,
+        available: true
     },
     {
         name: 'Francesca',
         shirtColor: 'white',
-        rate: 1
+        rate: 1,
+        available: false
     }
     ];
+
+
+    $scope.removeUser = function(user){
+        let removedUser  = $scope.users.indexOf(user);
+        $scope.users.splice(removedUser, 1);
+    }
+
 }]);
 
