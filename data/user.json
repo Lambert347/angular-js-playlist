@@ -1,0 +1,29 @@
+[{
+        "name": "Algernon",
+        "shirtColor": "yellow",
+        "rate": 50,
+        "available": true,
+        "thumb": "content/img/yoshi.png"
+    },
+    {
+        "name": "Jorge",
+        "shirtColor": "green",
+        "rate": 500,
+        "available": false,
+        "thumb": "content/img/crystal.png"
+    },
+    {
+        "name": "Patricia",
+        "shirtColor": "red",
+        "rate": 500000,
+        "available": true,
+        "thumb": "content/img/ryu.png"
+    },
+    {
+        "name": "Francesca",
+        "shirtColor": "white",
+        "rate": 1,
+        "available": false,
+        "thumb": "content/img/shaun.png"
+    }
+]

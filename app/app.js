@@ -36,36 +36,7 @@ app.controller('appController', ['$scope' , function($scope){
 
     //will only be recognized and will only be usable within the html tag that is using the controller
     //this is the div tag in the index.html
-    $scope.users = [
-    {
-        name: 'Algernon',
-        shirtColor: 'yellow',
-        rate: 50,
-        available: true,
-        thumb: "content/img/yoshi.png"
-    },
-    {
-        name: 'Jorge',
-        shirtColor: 'green',
-        rate: 500,
-        available: false,
-        thumb: "content/img/crystal.png"
-    },
-    {
-        name: 'Patricia',
-        shirtColor: 'red',
-        rate: 500000,
-        available: true,
-        thumb: "content/img/ryu.png"
-    },
-    {
-        name: 'Francesca',
-        shirtColor: 'white',
-        rate: 1,
-        available: false,
-        thumb: "content/img/shaun.png"
-    }
-    ];
+    
 
 
     $scope.removeUser = function(user){
@@ -85,6 +56,8 @@ app.controller('appController', ['$scope' , function($scope){
         $scope.newUser.shirtColor = "";
         $scope.newUser.rate = "";
     };
+
+    console.log(angular.toJson($scope.users));
 
 }]);
 
