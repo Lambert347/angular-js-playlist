@@ -20,6 +20,12 @@
             <span>{{user.shirtColor}} shirt</span>
           </li>
         </ul>
+        <form ng-submit="addUser()">
+          <input type="text" placeholder="name" ng-model="newUser.name" />
+          <input type="text" placeholder="shirt color" ng-model="newUser.shirtColor" />
+          <input type="text" placeholder="rate" ng-model="newUser.rate" />
+          <input type="submit" value="Add new user" />
+        </form>
       </div>
     </div>
   </body>

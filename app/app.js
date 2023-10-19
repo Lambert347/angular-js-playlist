@@ -56,7 +56,20 @@ app.controller('appController', ['$scope' , function($scope){
     $scope.removeUser = function(user){
         let removedUser  = $scope.users.indexOf(user);
         $scope.users.splice(removedUser, 1);
-    }
+    };
+
+    $scope.addUser = function(){
+        $scope.users.push({
+            name: $scope.newUser.name,
+            shirtColor: $scope.newUser.shirtColor,
+            rate: parseInt($scope.newUser.rate),
+            available: true
+        });
+
+        $scope.newUser.name = "";
+        $scope.newUser.shirtColor = "";
+        $scope.newUser.rate = "";
+    };
 
 }]);
 
